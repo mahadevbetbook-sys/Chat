@@ -26,6 +26,7 @@ body{
   height:42px;
   border-radius:50%;
   margin-right:10px;
+  object-fit:cover;
 }
 .user-info{
   line-height:1.2;
@@ -99,14 +100,18 @@ body{
 
 <!-- HEADER -->
 <div class="header">
-  <!-- DP IMAGE -->
-  <img src="dp.png" class="dp">
+  <!-- DP (local file: dp.jpg) -->
+  <img src="dp.jpg" class="dp">
 
   <div class="user-info">
     <div class="name">
       Mahadev Support
-      <!-- BLUE TICK -->
-      <img src="blue-tick.png" class="tick">
+      <!-- BLUE TICK (external, no upload needed) -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"
+        class="tick"
+        alt="verified"
+      >
     </div>
     <div class="status">online</div>
   </div>
