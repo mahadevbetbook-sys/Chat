@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Chat Support</title>
+<title>Mahadev Support</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background:#e5ddd5;
 }
+
+/* HEADER */
 .header{
   background:#075e54;
   color:#fff;
@@ -18,42 +21,54 @@ body{
   display:flex;
   align-items:center;
 }
-.header img{
-  width:32px;
-  margin-right:10px;
-}
-.header .title{
-  font-size:16px;
-}
+.header img{width:32px;margin-right:10px}
+.header .title{font-size:16px;line-height:1.2}
+
+/* CHAT AREA */
 .chat-area{
-  padding:15px;
-  height:60vh;
+  height:calc(100vh - 120px);
   background:#ece5dd;
 }
+
+/* INPUT BAR */
 .footer{
   position:fixed;
   bottom:0;
   width:100%;
   background:#f0f0f0;
-  padding:10px;
+  padding:8px;
   display:flex;
+  align-items:center;
+  gap:8px;
 }
+
+/* ICONS */
+.icon{
+  font-size:22px;
+  color:#666;
+  cursor:pointer;
+}
+
+/* TEXT BOX */
 .footer textarea{
   flex:1;
   resize:none;
   border:none;
   border-radius:20px;
-  padding:12px;
-  font-size:15px;
+  padding:10px 14px;
+  font-size:16px;
   outline:none;
+  max-height:120px;
 }
-.footer button{
+
+/* SEND BUTTON */
+.send{
   background:#25d366;
   border:none;
-  color:#fff;
-  width:50px;
-  margin-left:8px;
+  width:42px;
+  height:42px;
   border-radius:50%;
+  color:#fff;
   font-size:18px;
   cursor:pointer;
 }
@@ -70,28 +85,38 @@ body{
   </div>
 </div>
 
-<div class="chat-area">
-  <!-- empty just like WhatsApp -->
-</div>
+<div class="chat-area"></div>
 
 <div class="footer">
+  <span class="icon">😊</span>
+  <span class="icon">📎</span>
+
   <textarea id="msgBox" rows="1"></textarea>
-  <button onclick="sendMsg()">➤</button>
+
+  <button class="send" onclick="sendMsg()">➤</button>
 </div>
 
 <script>
-// 👉 DEFAULT MESSAGE (ads se aane par auto)
-let defaultMsg = "Sir need Mahadev original I'd in 100rs";
+const box = document.getElementById("msgBox");
 
-// page load par auto text
-document.getElementById("msgBox").value = defaultMsg;
+// DEFAULT MESSAGE
+box.value = "Sir need Mahadev original I'd in 100rs";
+
+// AUTO FOCUS (keyboard open)
+setTimeout(()=>{ box.focus(); },300);
+
+// AUTO HEIGHT
+box.addEventListener("input",()=>{
+  box.style.height="auto";
+  box.style.height=box.scrollHeight+"px";
+});
 
 function sendMsg(){
-  let msg = document.getElementById("msgBox").value;
-  if(msg.trim() === "") return;
+  let msg = box.value.trim();
+  if(!msg) return;
 
-  let phone = "919955414283"; // 👉 apna WhatsApp number yaha daalo
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+  let phone = "91XXXXXXXXXX"; // 👉 apna number
+  let url = "https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
   window.location.href = url;
 }
 </script>
