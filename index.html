@@ -2,90 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mahadev Official</title>
+<title>Mahadev Bet Book</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
 body{
-  margin:0;
-  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:#e5ddd5;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:#fff;
 }
 
-/* HEADER */
+/* Header */
 .header{
-  background:#075e54;
-  color:#fff;
-  padding:10px;
-  display:flex;
-  align-items:center;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px;
+    background:#020617;
 }
+
+/* DP */
+.dp-box{
+    position:relative;
+}
+
 .dp{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  margin-right:10px;
-  object-fit:cover;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #2563eb;
 }
-.user-info{line-height:1.2}
-.name{
-  font-size:16px;
-  font-weight:500;
-  display:flex;
-  align-items:center;
-}
+
+/* Blue Tick */
 .tick{
-  width:16px;
-  height:16px;
-  margin-left:5px;
-}
-.status{
-  font-size:12px;
-  opacity:0.9;
+    position:absolute;
+    bottom:-3px;
+    right:-3px;
+    width:18px;
+    height:18px;
+    background:#1d4ed8;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:bold;
+    color:white;
 }
 
-/* CHAT */
-.chat-area{
-  height:calc(100vh - 120px);
-  background:#ece5dd;
+/* Name */
+.name{
+    font-size:18px;
+    font-weight:600;
 }
 
-/* INPUT BAR */
-.footer{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  background:#f0f0f0;
-  padding:8px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.icon{
-  font-size:22px;
-  color:#666;
-}
-.footer textarea{
-  flex:1;
-  resize:none;
-  border:none;
-  border-radius:20px;
-  padding:10px 14px;
-  font-size:16px;
-  outline:none;
-  max-height:120px;
-  caret-color:#25D366;
-}
-.send{
-  background:#25d366;
-  border:none;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
+/* Button */
+.btn{
+    margin:25px;
+    display:block;
+    text-align:center;
+    background:#22c55e;
+    color:#000;
+    padding:14px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
 }
 </style>
 </head>
@@ -94,51 +79,17 @@ body{
 
 <!-- HEADER -->
 <div class="header">
-  <img src="https://mahadevbetbook-sys.github.io/mahadev.png" class="dp">
-  <div class="user-info">
-    <div class="name">
-      Mahadev Official
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="tick">
+    <div class="dp-box">
+        <img src="./mahadev.png?v=10" class="dp">
+        <div class="tick">✔</div>
     </div>
-    <div class="status">online</div>
-  </div>
+    <div class="name">Mahadev Bet Book</div>
 </div>
 
-<div class="chat-area"></div>
-
-<!-- INPUT -->
-<div class="footer">
-  <span class="icon">😊</span>
-  <span class="icon">📎</span>
-  <textarea id="msgBox" rows="1"></textarea>
-  <button class="send" onclick="sendMsg()">➤</button>
-</div>
-
-<script>
-const box = document.getElementById("msgBox");
-
-/* AUTO TEXT */
-box.value = "Sir need Mahadev original I'd in 100rs";
-
-/* AUTO KEYBOARD */
-setTimeout(()=>{ box.focus(); },300);
-
-/* AUTO HEIGHT */
-box.addEventListener("input",()=>{
-  box.style.height="auto";
-  box.style.height=box.scrollHeight+"px";
-});
-
-/* SEND TO WHATSAPP */
-function sendMsg(){
-  let msg = box.value.trim();
-  if(!msg) return;
-
-  let phone = "233200656166"; // ✅ WhatsApp number (without +)
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
-  window.location.href = url;
-}
-</script>
+<!-- BUTTON -->
+<a class="btn" href="https://wa.me/233200656166?text=Sir%20need%20Mahadev%20original%20ID%20in%20100rs" target="_blank">
+    Chat on WhatsApp
+</a>
 
 </body>
 </html>
