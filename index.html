@@ -6,7 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 body{
   margin:0;
   font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -28,7 +30,9 @@ body{
   margin-right:10px;
   object-fit:cover;
 }
-.user-info{line-height:1.2}
+.user-info{
+  line-height:1.2;
+}
 .name{
   font-size:16px;
   font-weight:500;
@@ -95,7 +99,7 @@ body{
 <!-- HEADER -->
 <div class="header">
   <!-- SAME FOLDER IMAGE -->
-  <img src="Mahadev.png" class="dp">
+  <img src="./dp.png" class="dp">
   <div class="user-info">
     <div class="name">
       Mahadev Official
@@ -105,6 +109,7 @@ body{
   </div>
 </div>
 
+<!-- CHAT -->
 <div class="chat-area"></div>
 
 <!-- INPUT -->
@@ -121,13 +126,15 @@ const box = document.getElementById("msgBox");
 /* AUTO TEXT */
 box.value = "Sir need Mahadev original I'd in 100rs";
 
-/* AUTO KEYBOARD */
-setTimeout(()=>{ box.focus(); },300);
+/* AUTO FOCUS */
+setTimeout(()=>{
+  box.focus();
+},300);
 
 /* AUTO HEIGHT */
 box.addEventListener("input",()=>{
   box.style.height="auto";
-  box.style.height=box.scrollHeight+"px";
+  box.style.height=box.scrollHeight + "px";
 });
 
 /* SEND TO WHATSAPP */
@@ -135,7 +142,7 @@ function sendMsg(){
   let msg = box.value.trim();
   if(!msg) return;
 
-  let phone = "233200656166"; // WhatsApp number (without +)
+  let phone = "233200656166"; // without +
   let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
   window.location.href = url;
 }
