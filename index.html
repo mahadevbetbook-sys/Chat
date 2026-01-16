@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mahadev Support</title>
+<title>Mahadev Official</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -28,9 +28,7 @@ body{
   margin-right:10px;
   object-fit:cover;
 }
-.user-info{
-  line-height:1.2;
-}
+.user-info{line-height:1.2}
 .name{
   font-size:16px;
   font-weight:500;
@@ -40,14 +38,14 @@ body{
 .tick{
   width:16px;
   height:16px;
-  margin-left:4px;
+  margin-left:5px;
 }
 .status{
   font-size:12px;
   opacity:0.9;
 }
 
-/* CHAT AREA */
+/* CHAT */
 .chat-area{
   height:calc(100vh - 120px);
   background:#ece5dd;
@@ -68,8 +66,6 @@ body{
   font-size:22px;
   color:#666;
 }
-
-/* TEXT BOX */
 .footer textarea{
   flex:1;
   resize:none;
@@ -81,8 +77,6 @@ body{
   max-height:120px;
   caret-color:#25D366;
 }
-
-/* SEND BUTTON */
 .send{
   background:#25d366;
   border:none;
@@ -100,18 +94,11 @@ body{
 
 <!-- HEADER -->
 <div class="header">
-  <!-- DP (local file: dp.jpg) -->
-  <img src="dp.jpg" class="dp">
-
+  <img src="https://mahadevbetbook-sys.github.io/mahadev.png" class="dp">
   <div class="user-info">
     <div class="name">
-      Mahadev Support
-      <!-- BLUE TICK (external, no upload needed) -->
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"
-        class="tick"
-        alt="verified"
-      >
+      Mahadev Official
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="tick">
     </div>
     <div class="status">online</div>
   </div>
@@ -123,19 +110,17 @@ body{
 <div class="footer">
   <span class="icon">😊</span>
   <span class="icon">📎</span>
-
   <textarea id="msgBox" rows="1"></textarea>
-
   <button class="send" onclick="sendMsg()">➤</button>
 </div>
 
 <script>
 const box = document.getElementById("msgBox");
 
-/* DEFAULT AUTO TEXT */
+/* AUTO TEXT */
 box.value = "Sir need Mahadev original I'd in 100rs";
 
-/* AUTO KEYBOARD OPEN */
+/* AUTO KEYBOARD */
 setTimeout(()=>{ box.focus(); },300);
 
 /* AUTO HEIGHT */
@@ -149,7 +134,7 @@ function sendMsg(){
   let msg = box.value.trim();
   if(!msg) return;
 
-  let phone = "91XXXXXXXXXX"; // 👈 अपना WhatsApp number
+  let phone = "233200656166"; // ✅ WhatsApp number (without +)
   let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
   window.location.href = url;
 }
