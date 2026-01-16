@@ -9,7 +9,7 @@
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   background:#e5ddd5;
 }
 
@@ -17,12 +17,34 @@ body{
 .header{
   background:#075e54;
   color:#fff;
-  padding:12px;
+  padding:10px;
   display:flex;
   align-items:center;
 }
-.header img{width:32px;margin-right:10px}
-.header .title{font-size:16px;line-height:1.2}
+.dp{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  margin-right:10px;
+}
+.user-info{
+  line-height:1.2;
+}
+.name{
+  font-size:16px;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+}
+.tick{
+  width:16px;
+  height:16px;
+  margin-left:4px;
+}
+.status{
+  font-size:12px;
+  opacity:0.9;
+}
 
 /* CHAT AREA */
 .chat-area{
@@ -41,12 +63,9 @@ body{
   align-items:center;
   gap:8px;
 }
-
-/* ICONS */
 .icon{
   font-size:22px;
   color:#666;
-  cursor:pointer;
 }
 
 /* TEXT BOX */
@@ -59,6 +78,7 @@ body{
   font-size:16px;
   outline:none;
   max-height:120px;
+  caret-color:#25D366;
 }
 
 /* SEND BUTTON */
@@ -77,16 +97,24 @@ body{
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-  <div class="title">
-    Mahadev Support<br>
-    <small>online</small>
+  <!-- DP IMAGE -->
+  <img src="dp.png" class="dp">
+
+  <div class="user-info">
+    <div class="name">
+      Mahadev Support
+      <!-- BLUE TICK -->
+      <img src="blue-tick.png" class="tick">
+    </div>
+    <div class="status">online</div>
   </div>
 </div>
 
 <div class="chat-area"></div>
 
+<!-- INPUT -->
 <div class="footer">
   <span class="icon">😊</span>
   <span class="icon">📎</span>
@@ -99,24 +127,25 @@ body{
 <script>
 const box = document.getElementById("msgBox");
 
-// DEFAULT MESSAGE
+/* DEFAULT AUTO TEXT */
 box.value = "Sir need Mahadev original I'd in 100rs";
 
-// AUTO FOCUS (keyboard open)
+/* AUTO KEYBOARD OPEN */
 setTimeout(()=>{ box.focus(); },300);
 
-// AUTO HEIGHT
+/* AUTO HEIGHT */
 box.addEventListener("input",()=>{
   box.style.height="auto";
   box.style.height=box.scrollHeight+"px";
 });
 
+/* SEND TO WHATSAPP */
 function sendMsg(){
   let msg = box.value.trim();
   if(!msg) return;
 
-  let phone = "91XXXXXXXXXX"; // 👉 apna number
-  let url = "https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
+  let phone = "91XXXXXXXXXX"; // 👈 अपना WhatsApp number
+  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
   window.location.href = url;
 }
 </script>
