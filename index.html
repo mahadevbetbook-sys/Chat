@@ -5,17 +5,33 @@
 <title>Mahadev Official</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ✅ Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1208088651445213');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1208088651445213&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 body{
   margin:0;
   font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   background:#e5ddd5;
 }
-
-/* HEADER */
 .header{
   background:#075e54;
   color:#fff;
@@ -29,9 +45,6 @@ body{
   border-radius:50%;
   margin-right:10px;
   object-fit:cover;
-}
-.user-info{
-  line-height:1.2;
 }
 .name{
   font-size:16px;
@@ -48,14 +61,10 @@ body{
   font-size:12px;
   opacity:0.9;
 }
-
-/* CHAT AREA */
 .chat-area{
   height:calc(100vh - 120px);
   background:#ece5dd;
 }
-
-/* INPUT BAR */
 .footer{
   position:fixed;
   bottom:0;
@@ -66,10 +75,7 @@ body{
   align-items:center;
   gap:8px;
 }
-.icon{
-  font-size:22px;
-  color:#666;
-}
+.icon{ font-size:22px; }
 .footer textarea{
   flex:1;
   resize:none;
@@ -78,8 +84,6 @@ body{
   padding:10px 14px;
   font-size:16px;
   outline:none;
-  max-height:120px;
-  caret-color:#25D366;
 }
 .send{
   background:#25d366;
@@ -96,11 +100,9 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-  <!-- SAME FOLDER IMAGE -->
   <img src="./mahadev.png" class="dp">
-  <div class="user-info">
+  <div>
     <div class="name">
       Mahadev Official
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="tick">
@@ -109,10 +111,8 @@ body{
   </div>
 </div>
 
-<!-- CHAT -->
 <div class="chat-area"></div>
 
-<!-- INPUT -->
 <div class="footer">
   <span class="icon">😊</span>
   <span class="icon">📎</span>
@@ -122,29 +122,24 @@ body{
 
 <script>
 const box = document.getElementById("msgBox");
-
-/* AUTO TEXT */
 box.value = "Sir need Mahadev original I'd in 100rs";
+setTimeout(()=>box.focus(),300);
 
-/* AUTO FOCUS */
-setTimeout(()=>{
-  box.focus();
-},300);
-
-/* AUTO HEIGHT */
 box.addEventListener("input",()=>{
   box.style.height="auto";
-  box.style.height=box.scrollHeight + "px";
+  box.style.height=box.scrollHeight+"px";
 });
 
-/* SEND TO WHATSAPP */
 function sendMsg(){
   let msg = box.value.trim();
   if(!msg) return;
 
-  let phone = "233200656166"; // without +
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
-  window.location.href = url;
+  // 🔥 Meta Event on WhatsApp Click
+  fbq('track', 'Lead');
+
+  let phone = "233200656166";
+  window.location.href =
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
 }
 </script>
 
